@@ -1,5 +1,9 @@
 <h1>New restaurant</h1>
 
+<div class="m-3">
+<%= link_to 'Go back to all restaurants', restaurants_path, :class => "btn btn-primary" %>
+</div>
+
 
 <%= form_with model: @restaurant, html: { class: "form-horizontal" } do |f| %>
   <div class="form-group mt-2">
@@ -26,7 +30,6 @@
   <div class="form-group mt-2">
     <%= f.label :category, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-
       <%= f.collection_select :category, Restaurant.select("DISTINCT(category)"), :category, :category, { prompt: "Select Category" }, { class: "form-control" } %>
     </div>
   </div>
