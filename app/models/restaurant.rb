@@ -6,6 +6,6 @@ class Restaurant < ApplicationRecord
     inclusion:
     {
       in: ["chinese", "italian", "japanese", "french", "belgian"],
-      message: "%{value} is not a valid size"
+      message: "%{value} is not a valid category"
     }
 end

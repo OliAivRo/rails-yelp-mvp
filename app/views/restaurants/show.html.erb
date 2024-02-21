@@ -1,0 +1,19 @@
+<div class="m-3">
+<%= link_to 'Go back to all restaurants', restaurants_path, :class => "btn btn-primary" %>
+</div>
+
+<div class="card m-3">
+  <img class="card-img-top center mx-auto" style="width:400px; height:400px" src="https://source.unsplash.com/random/400x400/?food" alt="food">
+  <div class="card-body">
+    <h5 class="card-title text-center"><%= @restaurant.name %></h5>
+    <p class="card-text text-center"><%= @restaurant.category %></p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Address:</strong><br><%= @restaurant.address %></li>
+      <li class="list-group-item"><strong>Phone number:</strong><br><%= @restaurant.phone_number %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="m-3">
+<%= link_to 'Give a review', new_restaurant_review_path(@restaurant), :class => "btn btn-primary" %>
+</div>

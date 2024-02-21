@@ -1,0 +1,20 @@
+<div class="row mt-2">
+  <h1>Our <%= @restaurants.count %> restaurants</h1>
+</div>
+
+<%= link_to 'Add a restaurant', new_restaurant_path, :class => "btn btn-primary" %>
+
+<div class="row mt-2">
+<% @restaurants.each do |restaurant| %>
+  <div class="card m-3" style="width: 18rem;">
+    <img class="card-img-top" src="https://source.unsplash.com/random/400x400?food" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><strong><%= restaurant.name %></strong></h5>
+      <p class="card-text"><%= restaurant.category %></p>
+    </div>
+    <div class="card-body">
+      <%= link_to "See more", restaurant_path(restaurant) %>
+    </div>
+  </div>
+<% end %>
+</div>
